@@ -1,0 +1,273 @@
+// ==================================colors
+// @import '../../../../node_modules/bootstrap/scss/functions';
+// @import "./buttons";
+
+// // ==================================colors theme
+/* purgecss start ignore */
+@mixin colorTheme(
+  $clr_primary: #355fd3,
+  $clr_secondary: #2e987b,
+  $clr_bodyBg: #f0f0f0,
+  $clr_light: #ededed
+) {
+  --bs-link-color: #{$clr_primary};
+  --bs-link-color-rgb: #{to-rgb($clr_primary)};
+  --bs-link-hover-color: #{$clr_primary};
+  --bs-link-hover-color-rgb: #{to-rgb($clr_primary)};
+
+  --bs-primary: #{$clr_primary};
+  --bs-primary-text: #{$clr_primary};
+  --bs-primary-rgb: #{to-rgb($clr_primary)};
+
+  --bs-secondary: #{$clr_secondary};
+  --bs-secondary-text: #{$clr_secondary};
+  --bs-secondary-rgb: #{to-rgb($clr_secondary)};
+
+  --bs-light-rgb: #{to-rgb($clr_light)};
+  --bs-light: #{$clr_light};
+  --bs-body-bg: #{$clr_bodyBg};
+  // --bs-soft-primary: rgba(#{to-rgb($clr_primary), 0.15}) !important; --option
+
+  --bs-soft-primary: color-mix(in srgb, var(--bs-primary) 15%, white) !important;
+
+  --bs-soft-secondary: color-mix(in srgb, var(--bs-secondary) 15%, white) !important;
+
+  // ios
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      --bs-soft-primary: rgba(var(--bs-primary-rgb), 0.15) !important;
+      --bs-soft-secondary: rgba(var(--bs-secondary-rgb), 0.15) !important;
+    }
+  }
+  // soft primary========
+  .bg-soft-primary {
+    background-color: var(--bs-soft-primary) !important;
+    color: var(--bs-primary);
+
+    &.cursorPointer:hover {
+      background-color: var(--bs-primary) !important;
+      color: $white;
+    }
+  }
+
+  .border-soft-primary {
+    border-color: var(--bs-soft-primary) !important;
+  }
+
+  .text-soft-primary {
+    color: var(--bs-soft-primary);
+  }
+
+  // soft secondary========
+  .bg-soft-secondary {
+    background-color: var(--bs-soft-secondary) !important;
+    color: var(--bs-secondary);
+
+    &.cursorPointer:hover {
+      background-color: var(--bs-secondary) !important;
+      color: $white;
+    }
+  }
+
+  .border-soft-secondary {
+    border-color: var(--bs-soft-secondary) !important;
+  }
+
+  .text-soft-secondary {
+    color: var(--bs-soft-secondary);
+  }
+}
+
+// theme color for doctube
+[data-bs-theme='doctube'] {
+  @include colorTheme(
+    $clr_primary: #f15a29,
+    $clr_light: #f2f4f0,
+    $clr_bodyBg: #fafafa,
+    $clr_secondary: #28bf61
+  );
+}
+
+[data-bs-theme='All'] {
+  @include colorTheme($clr_primary: #355fd3);
+}
+[data-bs-theme='ThemeTint'] {
+  @include colorTheme($clr_primary: #13388c, $clr_secondary: #159a6c);
+}
+
+[data-bs-theme='speciality'] {
+  @include colorTheme($clr_primary: #355fd3, $clr_bodyBg: #ffffff);
+}
+
+[data-bs-theme='Covid-19'] {
+  @include colorTheme($clr_primary: #dc5353);
+}
+
+[data-bs-theme='Allergy & Immunology'] {
+  @include colorTheme($clr_primary: #6a871f);
+}
+
+[data-bs-theme='Endocrinology'] {
+  @include colorTheme($clr_primary: #574f8c);
+}
+
+[data-bs-theme='Hematology'] {
+  @include colorTheme($clr_primary: #890a07);
+}
+
+[data-bs-theme='Nephrology'] {
+  @include colorTheme($clr_primary: #6285b9);
+}
+
+[data-bs-theme='General Surgery'] {
+  @include colorTheme($clr_primary: #a71351);
+}
+
+[data-bs-theme='General'] {
+  @include colorTheme($clr_primary: #355fd3);
+}
+
+[data-bs-theme='Hepatology'] {
+  @include colorTheme($clr_primary: #964b00);
+}
+
+[data-bs-theme='Pain Management'] {
+  @include colorTheme($clr_primary: #8d4884);
+}
+
+[data-bs-theme='Obstetrics & Gynaecology'] {
+  @include colorTheme($clr_primary: #ba1e5f);
+}
+
+[data-bs-theme='Dermatology'] {
+  @include colorTheme($clr_primary: #bc6c1b);
+}
+
+[data-bs-theme='Pathology'] {
+  @include colorTheme($clr_primary: #a932c7);
+}
+
+[data-bs-theme='Orthopaedics'] {
+  @include colorTheme($clr_primary: #b36512);
+}
+
+[data-bs-theme='Pediatrics'] {
+  @include colorTheme($clr_primary: #1278b7);
+}
+
+[data-bs-theme='Gastroenterology'] {
+  @include colorTheme($clr_primary: #b33d00);
+}
+
+[data-bs-theme='Urology'] {
+  @include colorTheme($clr_primary: #4545e2);
+}
+
+[data-bs-theme='Pathology and Radiology'] {
+  @include colorTheme($clr_primary: #6f52ce);
+}
+
+[data-bs-theme='Pulmonology'] {
+  @include colorTheme($clr_primary: #37b989);
+}
+
+[data-bs-theme='Critical Care'] {
+  @include colorTheme($clr_primary: #f44141);
+}
+
+[data-bs-theme='Rheumatology'] {
+  @include colorTheme($clr_primary: #af3252);
+}
+
+[data-bs-theme='Ophthalmology'] {
+  @include colorTheme($clr_primary: #209c51);
+}
+
+[data-bs-theme='Anesthesiology'] {
+  @include colorTheme($clr_primary: #191970);
+}
+
+[data-bs-theme='Oncology'] {
+  @include colorTheme($clr_primary: #d33f8f);
+}
+
+[data-bs-theme='Psychiatry'] {
+  @include colorTheme($clr_primary: #5d4e8b);
+}
+
+[data-bs-theme='Cardiology'] {
+  @include colorTheme($clr_primary: #700505);
+}
+
+[data-bs-theme='Neurology'] {
+  @include colorTheme($clr_primary: #9370db);
+}
+
+[data-bs-theme='Microbiology'] {
+  @include colorTheme($clr_primary: #53975a);
+}
+
+[data-bs-theme='Internal Medicine'] {
+  @include colorTheme($clr_primary: #4b24cd);
+}
+
+[data-bs-theme='General Medicine'] {
+  @include colorTheme($clr_primary: #a71351);
+}
+
+[data-bs-theme='Diabetology'] {
+  @include colorTheme($clr_primary: #1b9381);
+}
+
+[data-bs-theme='ENT'] {
+  @include colorTheme($clr_primary: #1bb3b2);
+}
+
+[data-bs-theme='Onco surgery'] {
+  @include colorTheme($clr_primary: #aa3b72);
+}
+
+@each $key, $val in $theme-colors {
+  @if $key != 'primary' and $key != 'secondary' {
+    :root {
+      --bs-soft-#{$key}: color-mix(in srgb, var(--bs-#{$key}) 15%, white) !important;
+    }
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+        :root {
+          --bs-soft-#{$key}: rgba(var(--bs-#{$key}-rgb), 0.15) !important;
+        }
+      }
+    }
+
+    .bg-soft-#{$key} {
+      background-color: var(--bs-soft-#{$key}) !important;
+
+      @if $key == 'light' or $key == 'white' {
+        color: $black !important;
+      } @else {
+        color: $val;
+      }
+
+      &.cursorPointer:hover {
+        background-color: $val !important;
+
+        @if $key == 'light' or $key == 'white' {
+          color: $black !important;
+        } @else {
+          color: $white !important;
+        }
+      }
+    }
+
+    .border-soft-#{$key} {
+      border-color: var(--bs-soft-#{$key}) !important;
+    }
+
+    .text-soft-#{$key} {
+      color: var(--bs-soft-#{$key}) !important;
+    }
+  }
+}
+
+/* purgecss start ignore */

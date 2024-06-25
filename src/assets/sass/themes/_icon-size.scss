@@ -1,0 +1,24 @@
+@import '../custom';
+$icon-size: (
+  '16': 1.6,
+  '20': 2,
+  '24': 2.4,
+  '32': 3.2,
+  '36': 3.6,
+  '48': 4.8,
+  '60': 6,
+  '50': 5,
+  '80': 8
+);
+
+@each $key, $val in $icon-size {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      .icon-size#{$infix}-#{$key} {
+        width: $val + rem !important;
+        height: $val + rem !important;
+      }
+    }
+  }
+}

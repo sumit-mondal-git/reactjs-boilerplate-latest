@@ -1,0 +1,46 @@
+@import '../../../node_modules/bootstrap/scss/functions';
+@import './mixins/mixin';
+
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
+
+$custome-colors: (
+  'purple': $purple,
+  'extra-light': #f8f8f8,
+  'black': $black,
+  'white': $white
+);
+$theme-colors: map-merge($custome-colors, $theme-colors);
+
+// //======================== custom font-size
+
+$custome-font-size: (
+  16: $font-size-base * 1.6,
+  30: $font-size-base * 3,
+  36: $font-size-base * 3.6,
+  72: $font-size-base * 7.2,
+  90: $font-size-base * 9
+);
+$font-sizes: map-merge($custome-font-size, $font-sizes);
+// //======================== custom font-size end
+
+// //======================== custom spacers
+$custome-spacers: (
+  20: $spacer * 2,
+  33: $spacer * 0.3,
+  25: $spacer * 2.5,
+  50: $spacer * 5,
+  70: $spacer * 7
+);
+$spacers: map-merge($custome-spacers, $spacers);
+// //======================== custom spacers end
+
+// //======================== border-widths
+$custome-border-widths: (
+  105: $font-size-base * 0.15
+);
+$border-widths: map-merge($custome-border-widths, $border-widths);
+// //======================== border-widths end
+
+@import '../../../node_modules/bootstrap/scss/mixins';
+// @import './uiV3/component/index';

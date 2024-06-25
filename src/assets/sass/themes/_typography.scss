@@ -1,0 +1,22 @@
+@mixin lineClamp($line-Clamp) {
+  -webkit-line-clamp: $line-Clamp;
+  -webkit-box-orient: vertical;
+  line-clamp: $line-Clamp;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: end;
+  display: -webkit-box;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+$line-Clamp: (
+  "1": 1
+);
+
+@for $i from 1 through 6 {
+  .line-clamp-#{$i} {
+    @include lineClamp($i);
+  }
+}
