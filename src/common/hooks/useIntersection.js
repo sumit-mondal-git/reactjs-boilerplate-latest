@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import { defaultOptions, defaultConfig, defaultProps } from './constant';
+const defaultOptions = {};
+const defaultConfig = { disconnectOnLeave: false };
+const noop = () => { };
+const defaultProps = {
+  onEnterViewport: noop,
+  onLeaveViewport: noop
+};
 /**
  *
  * @param {MutableRefObject} target
