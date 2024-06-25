@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import { store } from './store/store';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { ErrorBoundary } from 'react-error-boundary';
 
 const queryClientInstance = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
+
     <Provider store={store}>
       <QueryClientProvider client={queryClientInstance}>
         <App />
