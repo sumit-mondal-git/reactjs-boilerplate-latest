@@ -6,16 +6,19 @@ import {
   createHashRouter,
   createRoutesFromElements
 } from 'react-router-dom';
+import { AuthRouter } from '../pages/auth/router/auth-router';
+import { DashboardRouter } from '../pages/dashboard/router/dashboard-router';
 
 function IndexRouter() {
   const router = createBrowserRouter(
     [
       {
         path: "/",
-        element: <>Hi hi</>,
-
+        element: <>default</>,
+        errorElement: <>Error Happen</>
       },
-      // ...IndexRouters,
+      ...AuthRouter,
+      ...DashboardRouter
     ],
     { basename: process.env.PUBLIC_URL }
   );
