@@ -6,12 +6,20 @@ import {
   loginFormValidationSchema,
 } from "./constants/login-constants";
 import useRedirect from "../../common/hooks/useRedirect";
+import axiosInstance from "../../services/helper/axiosInstance";
 export default function Login() {
   const { redirectTo } = useRedirect();
   const formik = useFormik({
     initialValues: loginInnitialValues,
     validationSchema: loginFormValidationSchema,
     onSubmit: async (values) => {
+      const payload = {
+        username: values.username,
+        password: values.password,
+      };
+      // axiosInstance.post("/login", payload).then((res) => {
+      //   console.log(res);
+      // });
       console.log("hi");
       redirectTo("product/list");
     },

@@ -9,13 +9,14 @@ import {
 import { AuthRouter } from "../views/auth/router/auth-router";
 import { DashboardRouter } from "../views/dashboard/router/dashboard-router";
 import { ProductRouter } from "../views/product/router/product-router";
+import Login from "../views/auth/Login";
 
 function IndexRouter() {
   const router = createBrowserRouter(
     [
       {
         path: "/",
-        element: <>default</>,
+        element: <Login />,
         errorElement: <>Error Happen</>,
       },
       ...AuthRouter,
