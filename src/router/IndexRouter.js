@@ -1,13 +1,14 @@
-import React, { memo } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import React, { memo } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {
   Navigate,
   Route,
   createHashRouter,
-  createRoutesFromElements
-} from 'react-router-dom';
-import { AuthRouter } from '../pages/auth/router/auth-router';
-import { DashboardRouter } from '../pages/dashboard/router/dashboard-router';
+  createRoutesFromElements,
+} from "react-router-dom";
+import { AuthRouter } from "../views/auth/router/auth-router";
+import { DashboardRouter } from "../views/dashboard/router/dashboard-router";
+import { ProductRouter } from "../views/product/router/product-router";
 
 function IndexRouter() {
   const router = createBrowserRouter(
@@ -15,10 +16,11 @@ function IndexRouter() {
       {
         path: "/",
         element: <>default</>,
-        errorElement: <>Error Happen</>
+        errorElement: <>Error Happen</>,
       },
       ...AuthRouter,
-      ...DashboardRouter
+      ...DashboardRouter,
+      ...ProductRouter,
     ],
     { basename: process.env.PUBLIC_URL }
   );
