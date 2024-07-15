@@ -6,14 +6,15 @@ const apiVersion = packageJson.version;
 let accessToken = "";
 const axiosInstance = axios.create({
   baseURL,
-  // headers: {
-  //   Authorization: "",
-  //   version: `${apiVersion}`,
-  // },
+  headers: {
+    "Content-Type": "application/json",
+    // Authorization: "",
+    // version: `${apiVersion}`,
+  },
 });
 axiosInstance.interceptors.request.use(
   async (request) => {
-    request.headers.Authorization = accessToken || "";
+    // request.headers.Authorization = accessToken || "";
     return request;
   },
   async (error) => {
